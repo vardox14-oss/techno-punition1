@@ -61,7 +61,7 @@ const Navbar = () => {
 
 
         <div className="dev-credit desktop-only">
-          dev by <a href="https://portfolio-rkn.pages.dev/" target="_blank" rel="noopener noreferrer" className="vardox-link">vardox58</a>
+          dev by <a href="https://portfolio-rkn.pages.dev/" target="_blank" rel="noopener noreferrer" className="vardox-link">Allan</a>
         </div>
 
 
