@@ -5,7 +5,7 @@
   --color-text: #f0f0f0;
   --color-text-muted: #a0a0a0;
   --color-accent: #c08040;
-  /* Copper/Bronze */
+  --color-accent: #c08040;
   --color-accent-glow: rgba(192, 128, 64, 0.3);
   --color-steam: rgba(255, 255, 255, 0.1);
 
@@ -93,7 +93,7 @@ button {
   background-color: var(--color-text-muted);
 }
 
-/* Scrollbar */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -111,7 +111,7 @@ button {
   background: var(--color-accent);
 }
 
-/* Scroll Reveal Animation */
+
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);

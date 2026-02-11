@@ -86,7 +86,7 @@ const Biography = () => {
           margin-bottom: 4rem;
         }
         .bio-grid.reverse {
-            direction: rtl; /* simple way to reverse, but check content */
+            direction: rtl;
         }
         .bio-grid.reverse > * {
             direction: ltr;
@@ -110,7 +110,7 @@ const Biography = () => {
           width: 100%;
           border-radius: 4px;
           box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-          filter: sepia(20%); /* Old photo feel */
+          filter: sepia(20%);
           transition: transform 0.3s ease;
         }
         .bio-image:hover {

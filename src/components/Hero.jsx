@@ -67,7 +67,7 @@ const Hero = () => {
           position: absolute;
           top: 0;
           left: 0;
-          opacity: 0.6; /* Dim the image for text readability */
+          opacity: 0.6;
         }
         .hero-overlay {
           position: absolute;

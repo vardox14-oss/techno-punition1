@@ -2,92 +2,92 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const navLinks = [
-        { name: 'Biographie', href: '#biography' },
-        { name: 'Chronologie', href: '#timeline' },
-        { name: 'Inventions', href: '#inventions' },
-        { name: 'Héritage', href: '#legacy' },
-    ];
-
-    const handleScrollTo = (e, href) => {
-        e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) {
-            const offset = 80; // nav height
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elementRect = element.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-            setIsMobileMenuOpen(false);
-        }
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    return (
-        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-            <div className="container navbar-content">
-                <a href="#" className="logo" onClick={(e) => handleScrollTo(e, '#hero')}>
-                    James <span className="text-accent">Watt</span>
-                </a>
+  const navLinks = [
+    { name: 'Biographie', href: '#biography' },
+    { name: 'Chronologie', href: '#timeline' },
+    { name: 'Inventions', href: '#inventions' },
+    { name: 'Héritage', href: '#legacy' },
+  ];
 
-                {/* Desktop Menu */}
-                <div className="nav-links desktop-only">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={(e) => handleScrollTo(e, link.href)}
-                            className="nav-link"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                </div>
+  const handleScrollTo = (e, href) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
 
-                {/* Developer Credit */}
-                <div className="dev-credit desktop-only">
-                    dev by <a href="https://portfolio-rkn.pages.dev/" target="_blank" rel="noopener noreferrer" className="vardox-link">vardox58</a>
-                </div>
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      setIsMobileMenuOpen(false);
+    }
+  };
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="mobile-menu-btn mobile-only"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+  return (
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container navbar-content">
+        <a href="#" className="logo" onClick={(e) => handleScrollTo(e, '#hero')}>
+          James <span className="text-accent">Watt</span>
+        </a>
 
-                {/* Mobile Menu Overlay */}
-                <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={(e) => handleScrollTo(e, link.href)}
-                            className="mobile-nav-link"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                </div>
-            </div>
 
-            <style>{`
+        <div className="nav-links desktop-only">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => handleScrollTo(e, link.href)}
+              className="nav-link"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+
+        <div className="dev-credit desktop-only">
+          dev by <a href="https://portfolio-rkn.pages.dev/" target="_blank" rel="noopener noreferrer" className="vardox-link">vardox58</a>
+        </div>
+
+
+        <button
+          className="mobile-menu-btn mobile-only"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={(e) => handleScrollTo(e, link.href)}
+              className="mobile-nav-link"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
         .navbar {
           position: fixed;
           top: 0;
@@ -204,8 +204,8 @@ const Navbar = () => {
           }
         }
       `}</style>
-        </nav>
-    );
+    </nav>
+  );
 };
 
 export default Navbar;

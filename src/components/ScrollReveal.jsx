@@ -9,7 +9,7 @@ const ScrollReveal = ({ children, className = '', threshold = 0.1 }) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.unobserve(entry.target); // Reveal once
+                    observer.unobserve(entry.target); // Reveal 
                 }
             });
         }, { threshold });
