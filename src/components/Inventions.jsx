@@ -1,22 +1,26 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
 
+import condenser from '../assets/condenser.png';
+import steamEngine from '../assets/steam_engine.png';
+import workshop from '../assets/workshop.jpg';
+
 const Inventions = () => {
   const inventions = [
     {
       title: "Le Condenseur Séparé",
       desc: "L'amélioration cruciale. En séparant la condensation de la vapeur du cylindre principal, Watt a réduit la perte d'énergie, rendant la machine immensément plus efficace.",
-      img: "/src/assets/condenser.png"
+      img: condenser
     },
     {
       title: "La Machine à Vapeur",
       desc: "Grâce à ses améliorations, la machine à vapeur est passée d'une simple pompe de mine à un moteur universel capable d'alimenter des usines entières.",
-      img: "/src/assets/steam_engine.png"
+      img: steamEngine
     },
     {
       title: "L'Atelier de Recherche",
       desc: "Watt ne s'est pas arrêté à la vapeur. Il a inventé une machine à copier les lettres et a mené des recherches sur le blanchiment au chlore.",
-      img: "/src/assets/workshop.jpg"
+      img: workshop
     }
   ];
 

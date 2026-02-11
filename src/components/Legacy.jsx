@@ -1,49 +1,51 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
+import statue from '../assets/statue.jpg';
+import tower from '../assets/tower.jpg';
 
 const Legacy = () => {
-    return (
-        <section id="legacy" className="section legacy-section">
-            <div className="container">
-                <ScrollReveal>
-                    <h2 className="section-title">Héritage & Impact</h2>
-                </ScrollReveal>
+  return (
+    <section id="legacy" className="section legacy-section">
+      <div className="container">
+        <ScrollReveal>
+          <h2 className="section-title">Héritage & Impact</h2>
+        </ScrollReveal>
 
-                <ScrollReveal>
-                    <div className="legacy-content-wrapper">
-                        <div className="legacy-text">
-                            <h3>Une Révolution Industrielle</h3>
-                            <p>
-                                Les améliorations apportées par Watt ont transformé la machine à vapeur,
-                                passant d'un outil marginal à la force motrice de la Révolution Industrielle.
-                                Son travail a permis la mécanisation des usines, le développement des chemins de fer
-                                et a changé à jamais la face du monde.
-                            </p>
+        <ScrollReveal>
+          <div className="legacy-content-wrapper">
+            <div className="legacy-text">
+              <h3>Une Révolution Industrielle</h3>
+              <p>
+                Les améliorations apportées par Watt ont transformé la machine à vapeur,
+                passant d'un outil marginal à la force motrice de la Révolution Industrielle.
+                Son travail a permis la mécanisation des usines, le développement des chemins de fer
+                et a changé à jamais la face du monde.
+              </p>
 
-                            <div className="legacy-highlight">
-                                <h4>L'unité "Watt"</h4>
-                                <p>
-                                    En hommage à ses travaux pionniers, l'unité internationale de puissance du
-                                    Système international (SI) a été nommée le <strong>Watt (W)</strong> en 1882.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="legacy-images">
-                            <div className="legacy-img-card">
-                                <img src="/src/assets/statue.jpg" alt="Statue de James Watt" />
-                                <span>Statue mémoriale</span>
-                            </div>
-                            <div className="legacy-img-card">
-                                <img src="/src/assets/tower.jpg" alt="Watt Institution" />
-                                <span>Watt Institution</span>
-                            </div>
-                        </div>
-                    </div>
-                </ScrollReveal>
+              <div className="legacy-highlight">
+                <h4>L'unité "Watt"</h4>
+                <p>
+                  En hommage à ses travaux pionniers, l'unité internationale de puissance du
+                  Système international (SI) a été nommée le <strong>Watt (W)</strong> en 1882.
+                </p>
+              </div>
             </div>
 
-            <style>{`
+            <div className="legacy-images">
+              <div className="legacy-img-card">
+                <img src={statue} alt="Statue de James Watt" />
+                <span>Statue mémoriale</span>
+              </div>
+              <div className="legacy-img-card">
+                <img src={tower} alt="Watt Institution" />
+                <span>Watt Institution</span>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+
+      <style>{`
         .legacy-section {
           background: linear-gradient(to bottom, var(--color-bg), #000);
           color: #fff;
@@ -112,8 +114,8 @@ const Legacy = () => {
           }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Legacy;

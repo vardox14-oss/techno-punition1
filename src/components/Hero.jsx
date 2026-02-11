@@ -1,47 +1,48 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import wattHero from '../assets/watt_hero.jpg';
 
 const Hero = () => {
-    return (
-        <section id="hero" className="hero-section">
-            <div className="hero-background">
-                <div className="hero-overlay"></div>
-                <img
-                    src="/src/assets/watt_hero.jpg"
-                    alt="James Watt Portrait"
-                    className="hero-image"
-                    onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.style.display = 'none';
-                    }}
-                />
-            </div>
+  return (
+    <section id="hero" className="hero-section">
+      <div className="hero-background">
+        <div className="hero-overlay"></div>
+        <img
+          src={wattHero}
+          alt="James Watt Portrait"
+          className="hero-image"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.style.display = 'none';
+          }}
+        />
+      </div>
 
-            <div className="container hero-content">
-                <ScrollReveal>
-                    <h1 className="hero-title">
-                        James <span className="text-accent">Watt</span>
-                    </h1>
-                    <p className="hero-subtitle">
-                        L'ingénieur qui a propulsé la <br />
-                        Révolution Industrielle
-                    </p>
-                    <p className="hero-dates">1736 — 1819</p>
+      <div className="container hero-content">
+        <ScrollReveal>
+          <h1 className="hero-title">
+            James <span className="text-accent">Watt</span>
+          </h1>
+          <p className="hero-subtitle">
+            L'ingénieur qui a propulsé la <br />
+            Révolution Industrielle
+          </p>
+          <p className="hero-dates">1736 — 1819</p>
 
-                    <button
-                        className="scroll-btn"
-                        onClick={() => {
-                            document.getElementById('biography')?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                    >
-                        <span className="scroll-text">Découvrir son histoire</span>
-                        <ArrowDown className="scroll-icon" size={20} />
-                    </button>
-                </ScrollReveal>
-            </div>
+          <button
+            className="scroll-btn"
+            onClick={() => {
+              document.getElementById('biography')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            <span className="scroll-text">Découvrir son histoire</span>
+            <ArrowDown className="scroll-icon" size={20} />
+          </button>
+        </ScrollReveal>
+      </div>
 
-            <style>{`
+      <style>{`
         .hero-section {
           height: 100vh;
           width: 100%;
@@ -138,8 +139,8 @@ const Hero = () => {
           .hero-subtitle { font-size: 1.1rem; }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Hero;

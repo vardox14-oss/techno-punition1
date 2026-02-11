@@ -1,47 +1,48 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
+import timelineBg from '../assets/ruins.jpg';
 
 const Timeline = () => {
-    const events = [
-        { year: '1736', title: 'Naissance', desc: 'À Greenock, Écosse.' },
-        { year: '1755', title: 'Formation', desc: 'Apprentissage à Londres.' },
-        { year: '1764', title: 'Le Déclic', desc: 'Répare une machine de Newcomen et identifie ses défauts.' },
-        { year: '1765', title: 'L\'Invention', desc: 'Conçoit le condenseur séparé lors d\'une promenade.' },
-        { year: '1769', title: 'Le Brevet', desc: 'Dépose son premier brevet majeur.' },
-        { year: '1774', title: 'Boulton & Watt', desc: 'Partenariat avec Matthew Boulton à Birmingham.' },
-        { year: '1784', title: 'Mouvement Parallèle', desc: 'Brevète le mécanisme de mouvement parallèle.' },
-        { year: '1800', title: 'Retraite', desc: 'Se retire des affaires.' },
-        { year: '1819', title: 'Décès', desc: 'À Handsworth, Angleterre.' },
-    ];
+  const events = [
+    { year: '1736', title: 'Naissance', desc: 'À Greenock, Écosse.' },
+    { year: '1755', title: 'Formation', desc: 'Apprentissage à Londres.' },
+    { year: '1764', title: 'Le Déclic', desc: 'Répare une machine de Newcomen et identifie ses défauts.' },
+    { year: '1765', title: 'L\'Invention', desc: 'Conçoit le condenseur séparé lors d\'une promenade.' },
+    { year: '1769', title: 'Le Brevet', desc: 'Dépose son premier brevet majeur.' },
+    { year: '1774', title: 'Boulton & Watt', desc: 'Partenariat avec Matthew Boulton à Birmingham.' },
+    { year: '1784', title: 'Mouvement Parallèle', desc: 'Brevète le mécanisme de mouvement parallèle.' },
+    { year: '1800', title: 'Retraite', desc: 'Se retire des affaires.' },
+    { year: '1819', title: 'Décès', desc: 'À Handsworth, Angleterre.' },
+  ];
 
-    return (
-        <section id="timeline" className="section timeline-section">
-            <div className="timeline-bg">
-                <img src="/src/assets/carved_stone.jpg" alt="" />
-            </div>
+  return (
+    <section id="timeline" className="section timeline-section">
+      <div className="timeline-bg">
+        <img src={timelineBg} alt="" />
+      </div>
 
-            <div className="container">
-                <ScrollReveal>
-                    <h2 className="section-title">Chronologie</h2>
-                </ScrollReveal>
+      <div className="container">
+        <ScrollReveal>
+          <h2 className="section-title">Chronologie</h2>
+        </ScrollReveal>
 
-                <div className="timeline-container">
-                    <div className="timeline-line"></div>
+        <div className="timeline-container">
+          <div className="timeline-line"></div>
 
-                    {events.map((event, index) => (
-                        <ScrollReveal key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-                            <div className="timeline-marker"></div>
-                            <div className="timeline-content">
-                                <span className="timeline-year">{event.year}</span>
-                                <h4 className="timeline-event-title">{event.title}</h4>
-                                <p>{event.desc}</p>
-                            </div>
-                        </ScrollReveal>
-                    ))}
-                </div>
-            </div>
+          {events.map((event, index) => (
+            <ScrollReveal key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+              <div className="timeline-marker"></div>
+              <div className="timeline-content">
+                <span className="timeline-year">{event.year}</span>
+                <h4 className="timeline-event-title">{event.title}</h4>
+                <p>{event.desc}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
 
-            <style>{`
+      <style>{`
         .timeline-section {
           background-color: var(--color-bg);
           position: relative;
@@ -147,8 +148,8 @@ const Timeline = () => {
           .timeline-item.right .timeline-marker { left: 12px; right: auto; }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Timeline;

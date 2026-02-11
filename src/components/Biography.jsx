@@ -1,5 +1,6 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
+import ruins from '../assets/ruins.jpg';
 
 const Biography = () => {
     return (
@@ -30,7 +31,7 @@ const Biography = () => {
 
                         <div className="bio-image-container">
                             <img
-                                src="/src/assets/ruins.jpg"
+                                src={ruins}
                                 alt="Lieu historique lié à Watt"
                                 className="bio-image"
                                 onError={(e) => { e.target.style.display = 'none'; }}
